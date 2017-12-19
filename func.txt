@@ -1,0 +1,26 @@
+
+
+void main() {
+	system("chcp 1251 >> NUL");
+	cout << "Aaaa?ou a?aoiaioe nenoaie" << endl;
+	double arg[3][4], mas[3][3], det, detx, dety, detz, x, y, z;
+	imput(arg);
+	newmat(mas, 3, arg);
+	det = determinate(mas);
+	if (det != 0) {
+		newmat(mas, 0, arg);
+		detx = determinate(mas);
+
+		newmat(mas, 1, arg);
+		dety = determinate(mas);
+
+		newmat(mas, 2, arg);
+		detz = determinate(mas);
+		x = det / detx;
+		y = det / dety;
+		z = det / detz;
+		cout << "Ei?ai?:\tx=" << x << "\ty=" << y << "\tz=" << z << endl;
+	}
+	else cout << "Aace?? ei?ai?a!" << endl;
+	system("pause");
+}
