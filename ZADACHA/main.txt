@@ -1,0 +1,32 @@
+#include<iostream>
+#include<Windows.h>
+
+using namespace std;
+
+void imput(double arg [3][4]) {
+	for (int i = 0; i < 3; i++)
+		for (int j = 0; j < 4; j++)
+			cin >> arg[i][j];
+}
+
+void newmat(double mas[3][3], int iobm, double arg[3][4]) {
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 4; j++) {
+			if (j != iobm) {
+				if (j > iobm) mas[i][j - 1] = arg[i][j];
+				else mas[i][j] = arg[i][j];
+			}
+		}
+	}
+}
+
+double determinate(double mas[3][3]) {
+	double det = 
+		mas[0][0] * mas[1][1] * mas[2][2] + 
+		mas[0][1] * mas[1][2] * mas[2][0] + 
+		mas[0][2] * mas[1][0] * mas[2][1] - 
+		mas[0][2] * mas[1][1] * mas[2][0] - 
+		mas[0][1] * mas[1][0] * mas[2][2] - 
+		mas[0][0] * mas[1][2] * mas[2][1];
+	return (det);
+}
